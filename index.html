@@ -1,13 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Zairyan Lab</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Zairyan Lab – Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- GTM HEAD SNIPPET PLACEHOLDER -->
+  <!-- Paste your Google Tag Manager head snippet here when ready -->
 </head>
 <body>
-  <h1>Welcome to the Zairyan Lab</h1>
-  <p>This is a testing ground for features, tags, and experiments.</p>
+  <!-- GTM BODY SNIPPET PLACEHOLDER -->
+  <!-- Paste your Google Tag Manager noscript iframe here when ready -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="brand">Zairyan Lab</a>
+      <a href="about.html">About</a>
+      <a href="tools.html">Tools</a>
+      <a href="articles.html">Articles</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main class="container">
+
+    <section class="hero">
+      <h1>Welcome to the Zairyan Lab</h1>
+      <p>Financial topics they never taught you in school—made simple. This sandbox helps us test features, analytics, and flows without touching production.</p>
+      <div class="cta-row">
+        <a class="button" href="assets/test-guide.pdf" download>⬇️ Download Guide (PDF)</a>
+        <a class="button outline" href="tools.html">Try the Budget Tool</a>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <h2>Stay in the loop</h2>
+      <p>(Mock) Join our test list to try form tracking and GTM events.</p>
+      <form id="newsletter-form" onsubmit="handleNewsletter(event)">
+        <label>Email
+          <input type="email" name="email" required placeholder="you@example.com" />
+        </label>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="newsletter-msg" class="muted" aria-live="polite"></p>
+    </section>
+
+    <script>
+      function handleNewsletter(e){
+        e.preventDefault();
+        const msg = document.getElementById('newsletter-msg');
+        msg.textContent = "Thanks! (Mock) You’re on the list.";
+        // For GTM: dataLayer push example
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'newsletter_submitted' });
+      }
+    </script>
+
+  </main>
+  <footer class="site-footer">
+    <small>© Zairyan • Test environment</small>
+  </footer>
 </body>
 </html>
